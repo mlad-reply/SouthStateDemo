@@ -5,11 +5,24 @@ const nextConfig: NextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'app-sare03saas77yd9t001.cms.optimizely.com'
-      }
-    ]
-  }
+        hostname: 'app-sare03saas77yd9t001.cms.optimizely.com',
+      },
+    ],
+  },
+
+  async headers() {
+    return [
+      {
+        source: '/:path*',
+        headers: [
+          {
+            key: 'Content-Security-Policy',
+            value: "frame-ancestors 'self' https://*.optimizely.com",
+          },
+        ],
+      },
+    ];
+  },
 };
 
 export default nextConfig;
-
