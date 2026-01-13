@@ -16,6 +16,10 @@ const nextConfig: NextConfig = {
         source: '/:path*',
         headers: [
           {
+            key: 'X-Frame-Options',
+            value: 'ALLOW-FROM https://*.optimizely.com',
+          },
+          {
             key: 'Content-Security-Policy',
             value: "frame-ancestors 'self' https://*.optimizely.com",
           },
