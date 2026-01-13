@@ -1,0 +1,141 @@
+fragment SSTextBlockFragment on SSTextBlock {
+   __typename
+  _id
+  Heading
+  Body {
+    html
+  }
+}
+
+fragment BlockImageFragment on BlockImage {
+  __typename
+  _id
+   _metadata {
+    displayName
+  }
+  _json
+}
+
+fragment CTASectionFragment on CTASectionBlock {
+  Heading
+  Description {
+    html
+  }
+  BackgroundImage {
+    default
+  }
+  PrimaryButtonText
+  PrimaryButtonLink {
+    url {
+      default
+    }
+  }
+  SecondaryButtonText
+  SecondaryButtonLink {
+    url {
+      default
+    }
+  }
+}
+
+fragment SSHeroBlockFragment on SSHeroBlock {
+  Heading
+
+  Description {
+    html
+  }
+
+  PrimaryButtonText
+  PrimaryButtonLink {
+    url {
+      default
+    }
+  }
+
+  SecondaryButtonText
+  SecondaryButtonLink {
+    url {
+      default
+    }
+  }
+
+  ImageURL {
+    url {
+      default
+    }
+  }
+}
+
+fragment SSFeaturesFragment on SSFeatures {
+  Heading
+   descriptionText: Description
+
+  Feature1Title
+  Feature1Description
+  Feature1Icon
+
+  Feature2Title
+  Feature2Description
+  Feature2Icon
+
+  Feature3Title
+  Feature3Description
+  Feature3Icon
+
+  Feature4Title
+  Feature4Description
+  Feature4Icon
+}
+
+fragment SSMobileBankingBlock on SSMobileBankingBlock {
+  Heading
+  Description {
+    html
+  }
+
+  Image {
+    url {
+      default
+    }
+  }
+
+  Feature1Title
+  feature1Description: Feature1Description {
+    html
+  }
+  Feature2Title
+  Feature3Title
+  Feature4Title
+
+  CTAText
+  CTALink {
+    url {
+      default
+    }
+  }
+}
+
+
+
+fragment ItemsInContentArea on _IContent {
+  __typename
+  ... on SSHeroBlock {
+    ...SSHeroBlockFragment
+  }
+  ... on SSTextBlock {
+    ...SSTextBlockFragment
+  }
+   ... on SSFeatures {
+    ...SSFeaturesFragment
+  }
+  ... on BlockImage {
+    ...BlockImageFragment
+  }
+  ... on CTASectionBlock {
+    ...CTASectionFragment
+  }
+  ... on SSMobileBankingBlock {
+    ...SSMobileBankingBlock
+  }
+   
+}

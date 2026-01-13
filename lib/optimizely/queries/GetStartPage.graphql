@@ -1,0 +1,18 @@
+query GetHomePage {
+  Page {
+    items {
+      Title
+      _metadata {
+        displayName
+        url {
+          hierarchical
+        }
+      }
+      Blocks {
+        __typename
+        ...ItemsInContentArea
+      }
+
+    }
+  }
+}
