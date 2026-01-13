@@ -5,7 +5,7 @@ const nextConfig: NextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: '**.cms.optimizely.com'
+        hostname: 'app-sare03saas77yd9t001.cms.optimizely.com'
       }
     ]
   }
