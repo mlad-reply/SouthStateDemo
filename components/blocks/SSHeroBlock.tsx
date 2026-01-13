@@ -27,7 +27,7 @@ export default function SSHeroBlock(props: SSHeroBlockProps) {
       <div className="max-w-7xl mx-auto">
         <div className="grid lg:grid-cols-2 gap-8 items-center">
           {/* Left Content */}
-          <div className="px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
+                  <div className="px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
             {Heading && (
               <h1 className="text-4xl md:text-5xl lg:text-6xl mb-6">
                 {Heading}
@@ -43,32 +43,26 @@ export default function SSHeroBlock(props: SSHeroBlockProps) {
 
             <div className="flex flex-col sm:flex-row gap-4">
               {PrimaryButtonText && PrimaryButtonLink?.url?.default && (
-                <Button
-                  size="lg"
-                  className="bg-gray-900 text-white hover:bg-gray-800"
-                  asChild
+                <a
+                  href={PrimaryButtonLink.url.default}
+                  className="inline-flex items-center justify-center rounded-md px-6 py-3 text-lg font-medium
+                            bg-gray-900 text-white hover:bg-gray-800 transition"
                 >
-                  <a href={PrimaryButtonLink.url.default}>
-                    {PrimaryButtonText}
-                  </a>
-                </Button>
+                  {PrimaryButtonText}
+                </a>
               )}
 
               {SecondaryButtonText && SecondaryButtonLink?.url?.default && (
-                <Button
-                  size="lg"
-                  variant="outline"
-                  className="border-gray-900 text-gray-900 hover:bg-gray-900/10"
-                  asChild
+                <a
+                  href={SecondaryButtonLink.url.default}
+                  className="inline-flex items-center justify-center rounded-md px-6 py-3 text-lg font-medium
+                            border border-gray-900 text-gray-900 hover:bg-gray-900/10 transition"
                 >
-                  <a href={SecondaryButtonLink.url.default}>
-                    {SecondaryButtonText}
-                  </a>
-                </Button>
+                  {SecondaryButtonText}
+                </a>
               )}
             </div>
           </div>
-
           {/* Right Image */}
           <div className="relative h-[400px] lg:h-[600px]">
             {ImageURL?.url?.default && (

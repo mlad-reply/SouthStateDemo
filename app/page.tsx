@@ -1,9 +1,11 @@
+export const dynamic = "force-dynamic";
 
 import { Suspense } from 'react';
 import { optimizely } from '@/lib/optimizely/fetch'
 import  ContentAreaMapper  from '@/components/content-area/mapper';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
+
 
 export default async function HomePage() {
   const result = await optimizely.GetHomePage();
